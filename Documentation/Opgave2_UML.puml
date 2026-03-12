@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main{
+    - PaintJob stue
+}
+
+class PaintJob{
+    - String name
+    - ArrayList<Shape> surfaces
+    - ArrayList<Shape> deductions
+    - PaintCalculator paintCalculator
+    + void addSurface(Shape shape)
+    + void addDeduction(Shape shape)
+    + double getTotalSurface()
+    + double getTotalDeductions()
+    + double getPaintableArea()
+    + void printSummary()
+    + void printTotalLitre()
+}
+
+class PaintCalculator{
+    + double calculatePaint(double , double )
+}
+
+class Shape{
+    - double getArea()
+    - double getPerimeter()
+    - String getName()
+    - String getShapeName()
+}
+
+class Rectangle{
+    - double weight
+    - double height
+    + double getArea()
+    + double getPerimeter()
+    + String getShapeName()
+}
+
+class Circle{
+    - double radius
+    + double getArea()
+    + double getPerimeter()
+    + String getShapeName()
+}
+
+class Triangle{
+    - double a
+    - double b
+    - double c
+    + double getArea()
+    + double getPerimeter()
+    + String getShapeName()
+}
+
+abstract class ShapeDetail{
+    - String name
+    + String getName()
+}
+
+Main *-- PaintJob
+PaintJob *-- Shape
+PaintJob *-- PaintCalculator
+Shape <.. Circle
+Shape <.. Triangle
+Shape <.. Rectangle
+ShapeDetail <|-- Circle
+ShapeDetail <|-- Triangle
+ShapeDetail <|-- Rectangle
+
+@enduml

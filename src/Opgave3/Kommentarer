@@ -1,0 +1,22 @@
+
+    Hero Building – rettelse
+
+    Interfaces
+    Der er en Hero Character og 5 monstre.
+    Hero behandler dem forskelligt, f.eks. attack og defence.
+
+    Derudover kan de begge have forskellige egenskaber.
+    Jeg kunne adskille Character og monstre.
+
+    Interfacet kunne hedde Kombattant,
+    og jeg kunne implementere både Character og monstre fra Kombattant.
+
+    ===================================================================
+
+    Polymorfi
+    Der er lignende metoder for både Character og monstre.
+    Jeg kunne bruge nedarvning for dem.
+    På den måde behøver man ikke skrive de samme metoder igen.
+
+    Jeg har også brugt komposition
+    (ved at tilføje dem i en ArrayList).

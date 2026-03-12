@@ -1,0 +1,65 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main{
+    - ArrayList<Playable> playables
+    - MediaPlayer mediaPlayer
+}
+
+class Playable{
+    + void play()
+    + String getTitle()
+    + int getDurationSeconds()
+    + int getTime()
+    + int getMinute()
+    + int getSecond()
+}
+
+class Audiobook {
+    - String author;
+    + void play()
+}
+
+class Podcast {
+    - String host
+    + void play()
+}
+
+class Song {
+    - String artist
+    + void play()
+}
+
+abstract class MediaItem {
+    - String title
+    - int durationSeconds
+    + String getTitle()
+    + int getDurationSeconds()
+    + int getTime()
+    + int getMinute()
+    + int getSecond()
+}
+
+class MediaPlayer {
+    - ArrayList<Playable> playables
+    + void add(Playable item)
+    + void playAll()
+    + void printPlaylist()
+    + void printTotalDuration()
+    + int getTotalDuration()
+    + int getTotalTime()
+    + int getTotalMinute()
+    + int getTotalSecond()
+}
+
+Main *-- MediaPlayer
+Main *-- Playable
+MediaPlayer *-- Playable
+Playable <..Song
+Playable <..Audiobook
+Playable <..Podcast
+MediaItem <|--Song
+MediaItem <|--Audiobook
+MediaItem <|--Podcast
+
+@enduml
