@@ -24,7 +24,9 @@ public class Main {
         stue.addDeduction(new Rectangle("Vindue2",0.5,1));
         stue.addDeduction(new Circle("Vindue3", 0.5));
 
+        // print
         stue.printSummary();
+
 
 
     }
