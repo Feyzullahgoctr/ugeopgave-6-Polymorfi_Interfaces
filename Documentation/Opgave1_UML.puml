@@ -55,11 +55,11 @@ class MediaPlayer {
 Main *-- MediaPlayer
 Main *-- Playable
 MediaPlayer *-- Playable
-Playable <..Song
-Playable <..Audiobook
-Playable <..Podcast
-MediaItem <|--Song
-MediaItem <|--Audiobook
-MediaItem <|--Podcast
+Playable <.. Song
+Playable <.. Audiobook
+Playable <.. Podcast
+MediaItem <|-- Song
+MediaItem <|-- Audiobook
+MediaItem <|-- Podcast
 
 @enduml
